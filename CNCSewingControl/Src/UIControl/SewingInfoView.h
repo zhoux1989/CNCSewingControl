@@ -47,9 +47,11 @@ public:
 //  Ù–‘
 protected:
 	CFont m_fntPropList;
-	CUserPropertyGridCtrl m_wndInfoList;
 	CSewingInfoToolBar m_wndToolBar;
 	SewingInfo m_infoSewing;
+
+public:
+	CUserPropertyGridCtrl m_wndInfoList;
 
 //  µœ÷
 public:

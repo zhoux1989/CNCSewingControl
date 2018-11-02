@@ -149,6 +149,7 @@ protected:
 	afx_msg void OnApplicationLook(UINT id);
 	afx_msg void OnUpdateApplicationLook(CCmdUI* pCmdUI);
 	afx_msg void OnUpdateConnectOrBreak(CCmdUI* pCmdUI);
+	//afx_msg void OnUpdateSaveBtnState(CCmdUI* pCmdUI);
 	afx_msg void OnViewrecovery();
 	afx_msg void OnSewinginfoView();
 	afx_msg void OnCurrentSewfileView();

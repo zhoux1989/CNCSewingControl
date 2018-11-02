@@ -21,6 +21,7 @@
 CUserPropertyGridProperty::CUserPropertyGridProperty(const CString& strName, const COleVariant& varValue, LPCTSTR lpszDescr):CMFCPropertyGridProperty(strName, varValue, lpszDescr)
 {
 	m_nStep = 1;
+	m_bNeedSave = FALSE;
 }
 
 void CUserPropertyGridProperty::OnDrawValue(CDC* pDC, CRect rect)
@@ -384,6 +385,7 @@ void CUserPropertyGridCtrl::AddButtonGroup(int nItem, BOOL bSwitchVal, BOOL bSav
 {
 	CStringArray arrButtonText;
 	vector<int> arrCtrlID;
+	vector<BOOL> arrDisabled;
 	if (bSwitchVal)
 	{
 		arrButtonText.Add(L"¿ª");
@@ -396,16 +398,20 @@ void CUserPropertyGridCtrl::AddButtonGroup(int nItem, BOOL bSwitchVal, BOOL bSav
 	}
 	arrCtrlID.push_back(IDC_FIRSTBTN_PLUS_ID);
 	arrCtrlID.push_back(IDC_FIRSTBTN_MINUS_ID);
+	arrDisabled.push_back(TRUE);
+	arrDisabled.push_back(TRUE);
 
 	if (bResetButton)
 	{
 		arrButtonText.Add(L"ÖØÖÃ");
 		arrCtrlID.push_back(IDC_FIRSTBTN_RESET_ID);
+		arrDisabled.push_back(TRUE);
 	}
 	if (bSaveButton)
 	{
 		arrButtonText.Add(L"±£´æ");
 		arrCtrlID.push_back(IDC_FIRSTBTN_SAVE_ID);
+		arrDisabled.push_back(FALSE);
 	}
 
 	ButtonGroup btnGroup;
@@ -646,6 +652,7 @@ void CUserPropertyGridCtrl::OnBtnClickedPlus(UINT nBtnID)
 	int nItem = 0;
 	nItem = nBtnID - IDC_FIRSTBTN_PLUS_ID;
 	CUserPropertyGridProperty* pProp = (CUserPropertyGridProperty*)GetProperty(nItem);
+	pProp->m_bNeedSave = TRUE;
 	COleVariant var;
 	var = pProp->GetValue();
 	var.ChangeType(VT_I4);
@@ -658,6 +665,7 @@ void CUserPropertyGridCtrl::OnBtnClickedMinus(UINT nBtnID)
 	int nItem = 0;
 	nItem = nBtnID - IDC_FIRSTBTN_MINUS_ID;
 	CUserPropertyGridProperty* pProp = (CUserPropertyGridProperty*)GetProperty(nItem);
+	pProp->m_bNeedSave = TRUE;
 	COleVariant var;
 	var = pProp->GetValue();
 	var.ChangeType(VT_I4);
@@ -669,7 +677,8 @@ void CUserPropertyGridCtrl::OnBtnClickedSave(UINT nBtnID)
 {
 	int nItem = 0;
 	nItem = nBtnID - IDC_FIRSTBTN_SAVE_ID;
-	CMFCPropertyGridProperty* pProp = this->GetProperty(nItem);
+	CUserPropertyGridProperty* pProp = (CUserPropertyGridProperty*)this->GetProperty(nItem);
+	pProp->m_bNeedSave = FALSE;
 	COleVariant var;
 	var = pProp->GetValue();
 	var.ChangeType(VT_I4);

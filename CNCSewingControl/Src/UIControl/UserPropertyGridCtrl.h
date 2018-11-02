@@ -17,9 +17,9 @@
 //===================================================================================================
 
 #define IDC_FIRSTBTN_PLUS_ID		20001
-#define IDC_FIRSTBTN_MINUS_ID		40001
-#define IDC_FIRSTBTN_RESET_ID		60001
-#define IDC_FIRSTBTN_SAVE_ID		80001
+#define IDC_FIRSTBTN_MINUS_ID		30001
+#define IDC_FIRSTBTN_RESET_ID		40001
+#define IDC_FIRSTBTN_SAVE_ID		50001
 
 typedef vector<CButton*> ButtonGroup;
 
@@ -31,8 +31,9 @@ public:
 	virtual ~CUserPropertyGridProperty(){};
 
 	int m_nStep;	// 加减的步进值
+	BOOL m_bNeedSave;
 
-	BOOL IsValueModified(const COleVariant& var1, const COleVariant& var2);
+	//BOOL IsValueModified(const COleVariant& var1, const COleVariant& var2);
 	virtual void OnDrawValue(CDC* pDC, CRect rect);
 };
 
@@ -93,8 +94,8 @@ protected:
 	afx_msg void OnBtnClickedPlus(UINT nBtnID);
 	afx_msg void OnBtnClickedMinus(UINT nBtnID);
 	afx_msg void OnBtnClickedSave(UINT nBtnID);
+	afx_msg void OnUpdateSaveBtn(CCmdUI* pCmdUI);
 	//}}AFX_MSG
-
 	DECLARE_MESSAGE_MAP()	
 };
 

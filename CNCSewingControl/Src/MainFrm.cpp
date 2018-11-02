@@ -334,6 +334,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWndEx)
 	ON_WM_CREATE()
 	ON_COMMAND_RANGE(ID_VIEW_APPLOOK_WIN_2000, ID_VIEW_APPLOOK_OFF_2007_AQUA, OnApplicationLook)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_VIEW_APPLOOK_WIN_2000, ID_VIEW_APPLOOK_OFF_2007_AQUA, OnUpdateApplicationLook)
+	//ON_UPDATE_COMMAND_UI_RANGE(IDC_FIRSTBTN_SAVE_ID, IDC_FIRSTBTN_SAVE_ID+9998, OnUpdateSaveBtnState)
 	ON_COMMAND(ID_SEWINGINFO_SET, OnSewinginfoView)
 	ON_COMMAND(ID_SEWFILE_SET, OnCurrentSewfileView)
 	ON_COMMAND(ID_SEW_EDIT, OnSewEditView)
@@ -856,6 +857,16 @@ void CMainFrame::OnUpdateConnectOrBreak(CCmdUI* pCmdUI)
 		}
 	}
 }
+
+//void CMainFrame::OnUpdateSaveBtnState(CCmdUI* pCmdUI)
+//{
+//	int nItem = pCmdUI->m_nID-IDC_FIRSTBTN_SAVE_ID;
+//	if (nItem > 0 && nItem < m_wndSewingInfo.m_wndInfoList.GetPropertyCount())
+//	{
+//		CUserPropertyGridProperty* pProp = (CUserPropertyGridProperty*)m_wndSewingInfo.m_wndInfoList.GetProperty(nItem);
+//		pCmdUI->Enable(!pProp->m_bNeedSave);
+//	}
+//}
 
 // 显示缝纫信息窗口
 void CMainFrame::OnSewinginfoView()
