@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ParamList>
+	<Param id="001" type="1" default="0">
+		<name>缝制结束后的压脚上升时间</name>
+		<tips>【OFF】在机针的最终位置上升.【ON】向缝制开始点移动后上升</tips>
+	</Param>
+	<Param id="002" type="2" default="0" min="0" max="2">
+		<name>左右分离压脚的下降动作［气动规格］</name>
+		<tips>【0】左右压脚同时下降.【1】压脚按从左→右的顺序下降.【2】压脚按从右→左的顺序下降</tips>
+	</Param>
+	<Param id="003" type="2" default="0" min="0" max="2">
+		<name>压脚下降动作［电磁规格］</name>
+		<tips>【0】模拟下降：压脚与踏板踏入量成比例下降，全部踏入后起动.【1】1档下降：踏板踏入第1档时下降，第2档后起动.【2】2档下降：踏板在第一档的中间停止，第二档踏入下降后起动</tips>
+	</Param>
+	<Param id="050" type="2" default="1" min="1" max="11">
+		<name>压脚工作模式</name>
+		<tips>【1】标准单踏板.【2】单踏板不上升状态.【3】标准双踏板.【4】双踏板不上升状态.【5】左右压脚→间歇压脚的2段压脚.【6】左右交替的2段压脚.【7】前进／后退踏板.【8】基于踏入２次的２段压脚.【9】标准3联踏板.【10】三踏板带原点检测.【11】特殊三踏板带原点检测</tips>
+	</Param>
+	<Param id="051" type="1" default="0">
+		<name>原点检测前的压脚动作</name>
+		<tips>【OFF】原点检测前，压脚的上下动作不能进行.【ON】即使是原点检测前，压脚的上下动作也能进行</tips>
+	</Param>
+	<Param id="052" type="1" default="0">
+		<name>断缝程序时的压脚动作</name>
+		<tips>【OFF】由于断缝程序而在中途停止时，压脚自动上升.【ON】由于断缝程序而在中途停止时，踏入踏脚开关，压脚上升</tips>
+	</Param>
+	<Param id="053" type="2" default="0" min="0" max="99">
+		<name>间歇压脚上升后，至送布移动开始为止的计时</name>
+		<tips>0～999 单位［mS］</tips>
+	</Param>
+	<Param id="054" type="2" default="0" min="0" max="2">
+		<name>间歇压脚的下降时间</name>
+		<tips>【0】通过压脚开关联动下降，但在送布退避位置不下降.【1】通过压脚开关联动下降.【2】通过压脚开关联动下降</tips>
+	</Param>
+	<Param id="055" type="2" default="0" min="0" max="2">
+		<name>气动式压脚的压脚信号阀门特殊输出［气动规格］</name>
+		<tips>【0】无效.【1】将气动规格的阀门输出反转.【2】由于２个定位阀门相对应，因此同时输出反转阀门输出</tips>
+	</Param>
+	<Param id="056" type="1" default="1">
+		<name>原点检测前的卷线动作</name>
+		<tips>【OFF】原点检测前卷线不能进行.【ON】即使原点检测前卷线也能进行</tips>
+	</Param>
+	<Param id="057" type="1" default="0">
+		<name>原点检测后的缝制开始点移动时的压脚动作</name>
+		<tips>【OFF】原点检测后，压脚仍保持下降状态，单踏板时踏板踏回，双踏板时由于压脚开关踏入，压脚随之上升.【OFF】原点检测后，压脚自动上升</tips>
+	</Param>
+	<Param id="058" type="1" default="0">
+		<name>缝纫结束时的压脚动作</name>
+		<tips>【OFF】缝纫结束时，压脚自动上升.【ON】缝纫结束时，压脚未自动上升</tips>
+	</Param>
+	<Param id="059" type="1" default="0">
+		<name>压脚重量</name>
+		<tips>【0】轻（无压脚）.【1】标准.【2】重</tips>
+	</Param>
+	<Param id="100" type="1" default="0">
+		<name>缝纫开始速度</name>
+		<tips>【OFF】缝纫开始1～5针的速度依据存储开关No.151～155的设定。【ON】第1针400rpm，第2针400rpm，第3针600rpm，第4针900rpm, 第5针2,000rpm</tips>
+	</Param>
+	<Param id="151" type="2" default="4" min="4" max="27">
+		<name>缝纫开始第1针速度</name>
+		<tips>4～27	［单位x100 rpm］</tips>
+	</Param>
+	<Param id="152" type="2" default="4" min="4" max="27">
+		<name>缝纫开始第2针速度</name>
+		<tips>4～27	［单位x100 rpm］</tips>
+	</Param>
+	<Param id="153" type="2" default="4" min="4" max="27">
+		<name>缝纫开始第3针速度</name>
+		<tips>4～27 ［单位x100 rpm］</tips>
+	</Param>
+	<Param id="154" type="2" default="4" min="4" max="27">
+		<name>缝纫开始第4针速度</name>
+		<tips>4～27 ［单位x100 rpm］</tips>
+	</Param>
+	<Param id="155" type="2" default="4" min="4" max="27">
+		<name>缝纫开始第5针速度</name>
+		<tips>4～27 ［单位x100 rpm］</tips>
+	</Param>
+	<Param id="156" type="2" default="4" min="4" max="27">
+		<name>缝纫结束5针前速度</name>
+		<tips>4～27 ［单位x100 rpm］</tips>
+	</Param>
+	<Param id="157" type="2" default="4" min="4" max="27">
+		<name>缝纫结束4针前速度</name>
+		<tips>4～27 ［单位x100 rpm］</tips>
+	</Param>
+	<Param id="158" type="2" default="4" min="4" max="27">
+		<name>缝纫结束3针前速度</name>
+		<tips>4～27 ［单位x100 rpm］</tips>
+	</Param>
+	<Param id="159" type="2" default="4" min="4" max="20">
+		<name>缝纫结束2针前速度</name>
+		<tips>4～20 ［单位x100 rpm］</tips>
+	</Param>
+	<Param id="161" type="1" default="0">
+		<name>贯穿力增强动作</name>
+		<tips>【OFF】无效。【ON】缝纫机马达锁定时，贯穿力增强动作进行</tips>
+	</Param>
+	<Param id="162" type="1" default="0">
+		<name>基于缝纫间距变化的缝纫速度变化规定</name>
+		<tips>【OFF】缝纫速度根据缝制数据的缝纫间距变动。【ON】缝纫速度与缝制数据的最大间距相符，并固定在最低速度（想要根据间距变化改变缝纫速度时ON）</tips>
+	</Param>
+	<Param id="163" type="2" default="12" min="12" max="27">
+		<name>限制最高缝纫速度</name>
+		<tips>12～27 ［単位x100 rpm］</tips>
+	</Param>
+	<Param id="164" type="1" default="0">
+		<name>无切线</name>
+		<tips>【OFF】依据缝制数据进行切线。【ON】所有切线动作均无效</tips>
+	</Param>
+	<Param id="165" type="2" default="0" min="-15" max="0">
+		<name>倒转针上升的角度［每步单位2度］</name>
+		<tips>-15～0 【0】通常上针位置 在负方向针杆高度提高</tips>
+	</Param>
+	<Param id="169" type="1" default="0">
+		<name>主轴锁定</name>
+		<tips>【OFF】无效。【ON】有效</tips>
+	</Param>
+	<Param id="170" type="2" default="2" min="1" max="8">
+		<name>主轴停针速度</name>
+		<tips>1~8		默认值2对应250转/分停针速度</tips>
+	</Param>
+	<Param id="200" type="1" default="0">
+		<name>1针测试送布</name>
+		<tips>【OFF】测试送布从踏脚开关（起动开关）踏入起动开始到最后一针全部自动进行。【ON】测试送布从踏脚开关（起动开关）踏入开始一针一针进行（持续踏入则一针一针连续进行）此外，测试灯亮起时，由于缝纫机手轮的手动转动，测试送布一针一针进行</tips>
+	</Param>
+	<Param id="250" type="1" default="0">
+		<name>缝纫结束时的机械原点复位</name>
+		<tips>【OFF】缝纫结束时，送布板回复至起始位置。【ON】缝纫结束时，送布板经过机械原点返回至起始位置</tips>
+	</Param>
+	<Param id="251" type="2" default="1" min="1" max="2">
+		<name>送布速度</name>
+		<tips>【1】100 mm/s延迟.【2】200 mm/s.【3】300 mm/s.【4】400 mm/s.【5】500 mm/s延迟</tips>
+	</Param>
+	<Param id="252" type="1" default="0">
+		<name>高速测试送布</name>
+		<tips>【OFF】通常慢速踏入踏脚开关第1档为高速送布（双踏板时，踏入压脚开关为高速送布）。【ON】测试送布与缝制时的速度相同</tips>
+	</Param>
+	<Param id="253" type="1" default="0">
+		<name>原点检测方法</name>
+		<tips>【OFF】程序No.闪烁时踏入踏脚开关（起动开关）。【ON】程序No.闪烁时按下专用外部输入开关［EXIN3］（踏脚开关/起动开关无效）</tips>
+	</Param>
+	<Param id="254" type="2" default="0" min="0" max="3">
+		<name>从机械原点到起点位置的移动路线</name>
+		<tips>【0】按Y轴向前→X轴中心的顺序，起点移动从XY轴同时开始.【1】按Y轴向前→X轴中心的顺序，起点移动按X轴起点→Y轴起点的顺序进行.【2】按X轴右端→Y轴向前的顺序，起点移动按X轴右端→Y轴起点→X轴起点的顺序进行.【3】按X轴左端→Y轴向前的顺序，起点移动按X轴左端→Y轴起点→X轴起点的顺序进行</tips>
+	</Param>
+	<Param id="260" type="2" default="0" min="-10" max="10">
+		<name>改变全部的送布同步时间</name>
+		<tips>-10～10 -10：提前←0：标准→10：延迟</tips>
+	</Param>
+	<Param id="261" type="2" default="0" min="-10" max="10">
+		<name>改变缝纫开始第1针的送布同步时间</name>
+		<tips>-10～10 -10：提前←0：标准→10：延迟</tips>
+	</Param>
+	<Param id="262" type="2" default="0" min="-10" max="10">
+		<name>改变缝纫开始第2针的送布同步时间</name>
+		<tips>-10～10 -10：提前←0：标准→10：延迟</tips>
+	</Param>
+	<Param id="263" type="2" default="0" min="-10" max="10">
+		<name>改变缝纫开始第3针的送布同步时间</name>
+		<tips>-10～10 -10：提前←0：标准→10：延迟</tips>
+	</Param>
+	<Param id="264" type="2" default="0" min="-10" max="10">
+		<name>改变缝纫结束前3针的送布同步时间</name>
+		<tips>-10～10 -10：提前←0：标准→10：延迟</tips>
+	</Param>
+	<Param id="265" type="2" default="0" min="-10" max="10">
+		<name>改变缝纫结束前2针的送布同步时间</name>
+		<tips>-10～10 -10：提前←0：标准→10：延迟</tips>
+	</Param>
+	<Param id="266" type="2" default="0" min="-10" max="10">
+		<name>改变缝纫结束前1针的送布同步时间</name>
+		<tips>-10～10 -10：提前←0：标准→10：延迟</tips>
+	</Param>
+	<Param id="267" type="2" default="0" min="0" max="99">
+		<name>当全部的送布同步从（No.260设定）初始值开始变更时，指定其有效针数</name>
+		<tips>【0】无限制.【1~99】如果超过了缝纫开始时指定的针数，则返回至标准送布同步</tips>
+	</Param>
+	<Param id="268" type="2" default="0" min="0" max="3">
+		<name>改变送布同步的基准时间</name>
+		<tips>【0】［送布开始基准］确定送布开始的同步时间.【1】［上针基准］改变均等分配的送布同步时间。【2】［送布结束基准］确定送布结束的同步时间.【3】［速度联动］即使速度改变，也以一定的同步进行送布时间</tips>
+	</Param>
+	<Param id="270" type="2" default="0" min="0" max="2">
+		<name>程序更改时的原点检测动作</name>
+		<tips>【0】无效.【1】原点检测无效，但送布通过缝纫区域中部移动.【2】有效</tips>
+	</Param>
+	<Param id="279" type="2" default="0" min="0" max="180">
+		<name>固定开始送料角度</name>
+		<tips>0~180	对应主轴编码器位置</tips>
+	</Param>
+	<Param id="285" type="2" default="0" min="-9" max="100">
+		<name>剪线电机速度修正</name>
+		<tips>-9~100	单位0.1转/秒（在1转/秒基础上叠加）</tips>
+	</Param>
+	<Param id="300" type="1" default="0">
+		<name>生产计数器显示</name>
+		<tips>【OFF】底线计数器显示。【ON】生产计数器显示</tips>
+	</Param>
+	<Param id="350">
+		<name>操作盘限制变更</name>
+		<tips></tips>
+	</Param>
+	<Param id="351" type="1" default="0">
+		<name>存储开关的变更</name>
+		<tips>【OFF】可以.【ON】禁止</tips>
+	</Param>
+	<Param id="352" type="2" default="0" min="0" max="2">
+		<name>底线计数，生产计数的计数方法</name>
+		<tips>【0】以缝制数据为单位计数.【1】以切线计数.【2】缝制数据结束或断缝停止时计数</tips>
+	</Param>
+	<Param id="353" type="1" default="0" min="" max="">
+		<name>底线计数的计数同步</name>
+		<tips>【OFF】缝制结束时计数.【ON】缝制开始时计数</tips>
+	</Param>
+	<Param id="356" type="2" default="0" min="0" max="3">
+		<name>条码枪扫描</name>
+		<tips>【1】扫描到有效条码后切换到对应No.【2】扫描到有效条码后切换到对应No.并自动移动到起点.【3】扫描到有效条码后切换到对应No.并自动移动到起点，开始缝制</tips>
+	</Param>
+	<Param id="357" type="2" default="0" min="0" max="200">
+		<name>条码扫描有效后到缝制之前的延时</name>
+		<tips>0~200 扫描到有效条码后到开始缝制前的延时，单位10ms</tips>
+	</Param>
+	<Param id="400" type="1" default="0" min="" max="">
+		<name>用户程序</name>
+		<tips>[OFF]无效.[ON]用户程序模式有效</tips>
+	</Param>
+	<Param id="401" type="1" default="0" min="" max="">
+		<name>循环程序</name>
+		<tips>【OFF】无效.【ON】使用用户程序缝制时，按照已设定的程序依次进行缝制</tips>
+	</Param>
+	<Param id="402" type="1" default="0" min="" max="">
+		<name>扩大缩小率mm显示</name>
+		<tips>【OFF】用%显示.【ON】用mm显示</tips>
+	</Param>
+	<Param id="403" type="2" default="0" min="0" max="2">
+		<name>断缝模式的选择</name>
+		<tips>【0】连续断缝模式（断缝检测前，断缝菜单无效）.【1】连续断缝模式（断缝菜单始终有效）.【2】单独断缝模式</tips>
+	</Param>
+	<Param id="450" type="1" default="0" min="" max="">
+		<name>用户程序转换时的起点移动</name>
+		<tips>【OFF】起动后，向转换后的起点移动.【ON】用户程序转换的同时，送布装置向下一个缝制起点移动</tips>
+	</Param>
+	<Param id="452" type="1" default="0" min="" max="">
+		<name>用户程序时的设定变更限制</name>
+		<tips>【OFF】无限制.【ON】禁止用户程序的内容变更</tips>
+	</Param>
+	<Param id="460">
+		<name>X方向的缝制区域限制</name>
+		<tips>［单位mm］</tips>
+	</Param>
+	<Param id="461">
+		<name>Y方向的缝制区域限制</name>
+		<tips>［单位mm］</tips>
+	</Param>
+	<Param id="462">
+		<name>扩大缩小的基准点</name>
+		<tips>【0】缝制范围内的中心位置.【1】缝制开始点.【2】图案中心</tips>
+	</Param>
+	<Param id="463">
+		<name>套结缝的扩大缩小</name>
+		<tips>【OFF】套结缝的运针（间距约1mm 以下）不可扩大缩小。【ON】套结缝的运针（间距约1mm 以下）也可扩大缩小</tips>
+	</Param>
+	<Param id="464">
+		<name>扩大缩小率的XY联动</name>
+		<tips>【OFF】无效。【ON】扩大缩小率的设定在XY上相同（用户程序时无效）</tips>
+	</Param>
+	<Param id="465">
+		<name>缝纫图案的平行移动量的记忆</name>
+		<tips>【OFF】程序No.或扩大缩小率的变更在电源OFF 时进行初始化。【ON】程序No.或扩大缩小率的变更在电源OFF 时进行初始化</tips>
+	</Param>
+	<Param id="466">
+		<name>将外部媒介上的缝制数据读入内存</name>
+		<tips>【0】［通常模式］将程序号码逐一复制到内存记忆中.【1】［写入模式］在暂存区域上写入缝制数据并复制，如果内存里有相同程序号码的缝制数据时则删除。【2】［插入模式］在暂存区域上写入缝制数据并复制，即使内存里有相同程序号码的缝制数据时也不删除，改为仅暂存区域的缝制数据可用（内存里有相同程序号码的缝制数据时，将设定值切换为“0”或“1”，并删除暂存区域的缝制数据）【3】［缓存模式］缝制数据仅写入到RAM中，切换花样号或关机后失效</tips>
+	</Param>
+	<Param id="468">
+		<name>切换平行移动后的位置的待避点</name>
+		<tips>【OFF】无效。【ON】将平行移动后的位置作为待避点存储</tips>
+	</Param>
+	<Param id="530">
+		<name>中压脚联动行程</name>
+		<tips>10~80	单位0.1mm</tips>
+	</Param>
+	<Param id="531">
+		<name>中压脚联动下降角度</name>
+		<tips>5~175	单位1对应主轴两度</tips>
+	</Param>
+	<Param id="532">
+		<name>中压脚联动上升角度</name>
+		<tips>5~175	单位1对应主轴两度</tips>
+	</Param>
+	<Param id="550">
+		<name>机针冷却装置</name>
+		<tips>【OFF】无效。【ON】使用机针冷却装置（选择输出No.12）</tips>
+	</Param>
+	<Param id="551">
+		<name>缝纫开始时的松线设定</name>
+		<tips>【OFF】无效。【ON】有效</tips>
+	</Param>
+	<Param id="552">
+		<name>缝纫开始时的松线设定</name>
+		<tips>-10～1 -10：提前←0：标准→1：延迟</tips>
+	</Param>
+	<Param id="554">
+		<name>断线检测装置</name>
+		<tips>【OFF】无效。【ON】使用光纤式断线检测装置</tips>
+	</Param>
+	<Param id="555">
+		<name>断线检测装置的检测灵敏度</name>
+		<tips>【OFF】缝纫开始5针，缝制中3针。【ON】缝纫开始10针，缝制中3针</tips>
+	</Param>
+	<Param id="557">
+		<name>外附扫线装置</name>
+		<tips>【0】无效.【1】使用电磁扫线装置.【2】使用气动扫线装置（选择输出No.2）</tips>
+	</Param>
+	<Param id="558">
+		<name>外部错误监视输入</name>
+		<tips>【OFF】无效。【ON】有效（P10、选择输入No.13［AIRSW］）</tips>
+	</Param>
+	<Param id="559">
+		<name>工作指示灯用输出</name>
+		<tips>【0】无效。【1】选择输出No.9：工作中输出ON；选择输出No.9：工作中输出ON；选择输出No.10：底线更换中、测试模式中ON；选择输出No.11：错误发生中ON。【2】输出9/10/11对应上夹线功能</tips>
+	</Param>
+	<Param id="560">
+		<name>自动退换装置</name>
+		<tips>【0】无效.【1】标准工作.【2】由于卡式压板传感器ON、缝制开始.【3】由于卡式压板传感器ON、缝制开始</tips>
+	</Param>
+	<Param id="561">
+		<name>设定自动退换装置自动起动时（存储开关No.560＝2），传感器检测后，到缝制开始为止的计时［气动规格］</name>
+		<tips>0～999 卡式压板检查后，到自动起动为止的时间</tips>
+	</Param>
+	<Param id="564">
+		<name>提高弹簧式主调节器时的最大松线力</name>
+		<tips>【0】无效（缝纫结束时，松线为开放状态）。【1】松线力加强（缝纫结束时，松线为关闭状态。松线开放时经过约5分后即变为关闭状态）.【2】松线力最大化（缝纫结束时，松线为关闭状态。松线开放时经过约1分后即变为关闭状态）</tips>
+	</Param>
+	<Param id="567">
+		<name>送布时的张力状况</name>
+		<tips>【OFF】松开。【ON】未松开</tips>
+	</Param>
+	<Param id="590">
+		<name>剪线电机第一段行程</name>
+		<tips>-500~500	单位为脉冲数</tips>
+	</Param>
+	<Param id="591">
+		<name>剪线电机第二段行程</name>
+		<tips>-400~400	单位为脉冲数</tips>
+	</Param>
+	<Param id="592">
+		<name>剪线减断角度</name>
+		<tips>0~180   单位1对应主轴两度</tips>
+	</Param>
+	<Param id="594">
+		<name>剪线开位置（角度）</name>
+		<tips>60~170	单位1对应主轴两度</tips>
+	</Param>
+	<Param id="595">
+		<name>剪线关位置（时间）</name>
+		<tips>0~800	单位毫秒，上针位有效后等待该时间关闭剪线（电机剪线时对应剪刀回到原位置）</tips>
+	</Param>
+	<Param id="596">
+		<name>松线开位置（角度）</name>
+		<tips>70~170	单位1对应主轴两度</tips>
+	</Param>
+	<Param id="597">
+		<name>松线关位置（时间）</name>
+		<tips>0~800	单位毫秒，上针位有效后等待该时间关闭剪线（电机剪线时对应剪刀回到原位置）</tips>
+	</Param>
+	<Param id="598">
+		<name>扫线开位置（时间）</name>
+		<tips>0~800	单位毫秒，上针位有效后等待该时间打开扫线</tips>
+	</Param>
+	<Param id="599">
+		<name>扫线关位置（时间）</name>
+		<tips>0~800	单位毫秒，扫线打开后等待该时间关闭扫线</tips>
+	</Param>
+	<Param id="650">
+		<name>错误停止状态的解除方法</name>
+		<tips>【0】按下RESET键.【1】按下RESET键或暂停开关.【2】按下RESET键，或者输入外部开关（EXIN3）</tips>
+	</Param>
+	<Param id="651">
+		<name>根据暂停开关确定缝制中断时的机针停止位置</name>
+		<tips>【0】下针处停止.【1】下针处停止.【2】切线后在上针处停止</tips>
+	</Param>
+	<Param id="652">
+		<name>暂停时的切线动作</name>
+		<tips>【OFF】从暂停复归时，切线运行。【ON】从暂停复归时，切线不运行</tips>
+	</Param>
+	<Param id="653">
+		<name>从暂停到重缝的进入方法</name>
+		<tips>【OFF】暂停开关→RESET键→ 键→缝制开始。【ON】暂停开关→RESET键→缝制开始</tips>
+	</Param>
+	<Param id="655">
+		<name>上针停止位置监视传感器无效</name>
+		<tips>【OFF】传感器有效，检测出上针停止位置错误[E110]。【ON】无效</tips>
+	</Param>
+	<Param id="656">
+		<name>暂停时的原点复归</name>
+		<tips>【OFF】复归后，向缝制开始点移动。【ON】复归后，向缝制开始点移动</tips>
+	</Param>
+	<Param id="657">
+		<name>急停开关关联计数器操作</name>
+		<tips>【OFF】无效。【ON】按下急停开关，计数器恢复到上一次缝制前数值</tips>
+	</Param>
+	<Param id="659">
+		<name>换料时间</name>
+		<tips>0~600	单位0.1s</tips>
+	</Param>
+	<Param id="701">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="702">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="703">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="704">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="705">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="706">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="707">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="708">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="711">
+		<name>用户自定义参数</name>
+		<tips>0~3</tips>
+	</Param>
+	<Param id="712">
+		<name>用户自定义参数</name>
+		<tips>0~3</tips>
+	</Param>
+	<Param id="713">
+		<name>用户自定义参数</name>
+		<tips>0~3</tips>
+	</Param>
+	<Param id="714">
+		<name>用户自定义参数</name>
+		<tips>0~3</tips>
+	</Param>
+	<Param id="721">
+		<name>用户自定义参数</name>
+		<tips>0~2000</tips>
+	</Param>
+	<Param id="722">
+		<name>用户自定义参数</name>
+		<tips>0~2000</tips>
+	</Param>
+	<Param id="723">
+		<name>用户自定义参数</name>
+		<tips>0~2000</tips>
+	</Param>
+	<Param id="724">
+		<name>用户自定义参数</name>
+		<tips>0~2000</tips>
+	</Param>
+	<Param id="725">
+		<name>用户自定义参数</name>
+		<tips>0~2000</tips>
+	</Param>
+	<Param id="750">
+		<name>惯性运行模式</name>
+		<tips>【0】无效.【1】在持续踏踏脚开关期间，压脚上下运行1次后，连续工作（存储开关No.050＝2、4时，压脚无上下运动）【2】在持续踏踏脚开关期间，压脚上下运行1次后，连续工作（存储开关No.050＝2、4时，压脚无上下运动）.【3】在持续踏踏脚开关期间，压脚上下运行3次后，连续工作（存储开关No.050＝2、4时，压脚无上下运动）</tips>
+	</Param>
+	<Param id="751">
+		<name>惯性运行循环时间调整计时器</name>
+		<tips>0～255 单位［x10mS］</tips>
+	</Param>
+	<Param id="752">
+		<name>缝纫机ID编码</name>
+		<tips>00～99		指定用CF卡的缝制数据</tips>
+	</Param>
+	<Param id="761">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="762">
+		<name>用户自定义参数</name>
+		<tips>OFF/ON</tips>
+	</Param>
+	<Param id="771">
+		<name>用户自定义参数</name>
+		<tips>0~3</tips>
+	</Param>
+	<Param id="772">
+		<name>用户自定义参数</name>
+		<tips>0~3</tips>
+	</Param>
+	<Param id="781">
+		<name>用户自定义参数</name>
+		<tips>0~2000</tips>
+	</Param>
+	<Param id="782">
+		<name>用户自定义参数</name>
+		<tips>0~2000</tips>
+	</Param>
+	<Param id="804">
+		<name>X轴送料区间</name>
+		<tips>-16~20	增加对应X轴送料速度减慢，减少对应X轴送料速度加快</tips>
+	</Param>
+	<Param id="805">
+		<name>Y轴送料区间</name>
+		<tips>-16~20	增加对应Y轴送料速度减慢，减少对应Y轴送料速度加快</tips>
+	</Param>
+	<Param id="806">
+		<name>送料角度调整</name>
+		<tips>-16~32	单位1对应主轴2度</tips>
+	</Param>
+	<Param id="807">
+		<name>伺服滞后时间</name>
+		<tips>0~25		单位0.1ms</tips>
+	</Param>
+	<Param id="811">
+		<name>X轴最低送料频率</name>
+		<tips>100~800	单位10Hz</tips>
+	</Param>
+	<Param id="821">
+		<name>Y轴最低送料频率</name>
+		<tips>100~800	单位10Hz</tips>
+	</Param>
+	<Param id="902">
+		<name>中压脚联动方式</name>
+		<tips>【OFF】中压脚模拟运行针步时压下，空送时抬起。【ON】中压脚模拟运行时抬起</tips>
+	</Param>
+	<Param id="905">
+		<name>自定义降速</name>
+		<tips>【OFF】无效。【ON】降速1~4档分别对应参数991/992/993/994设置值</tips>
+	</Param>
+	<Param id="906">
+		<name>花样固定起点</name>
+		<tips>【OFF】无效。【ON】从固定起点开始运行（可在打版中设置）</tips>
+	</Param>
+	<Param id="909">
+		<name>机头升降延时</name>
+		<tips>200~2000	单位毫秒</tips>
+	</Param>
+	<Param id="980">
+		<name>停针松线动作</name>
+		<tips>【OFF】剪线开/关时均有松线动作。【ON】</tips>
+	</Param>
+	<Param id="981">
+		<name>辅助压脚</name>
+		<tips>【OFF】无效。【ON】有效</tips>
+	</Param>
+	<Param id="983">
+		<name>双(三)针机夹面线操作延时</name>
+		<tips>-9~32	设置为0时，对应100ms，单位1对应10ms</tips>
+	</Param>
+	<Param id="984">
+		<name>双(三)针机夹面线一次动作针数</name>
+		<tips>1~9	单位针数</tips>
+	</Param>
+	<Param id="985">
+		<name>双(三)针机夹面线二次动作针数</name>
+		<tips>1~9	单位针数</tips>
+	</Param>
+	<Param id="986">
+		<name>双(三)针机夹面线第一针松线开位置</name>
+		<tips>1~180	主轴角度值，单位1对应主轴2度</tips>
+	</Param>
+	<Param id="989">
+		<name>扫线到位检测</name>
+		<tips>【OFF】无效。【ON】扫线动作后检测输入2状态，未检测到时报错E605</tips>
+	</Param>
+	<Param id="991">
+		<name>自定义降速指令1</name>
+		<tips>2~25		单位100转/分</tips>
+	</Param>
+	<Param id="992">
+		<name>自定义降速指令2</name>
+		<tips>2~25		单位100转/分</tips>
+	</Param>
+	<Param id="993">
+		<name>自定义降速指令3</name>
+		<tips>2~25		单位100转/分</tips>
+	</Param>
+	<Param id="994">
+		<name>自定义降速指令4</name>
+		<tips>2~25		单位100转/分</tips>
+	</Param>
+</ParamList>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InputCheck>
+<!--以下定义输入参数-->
+<!--id表示编号、type表示值类型（1为开关型，2为数值型）、mode表示查询模式（0为待定、1为专用输入口、2为通用输出口、3为输出口）、bit为端口号-->
+	<CheckItem id="01" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="02" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="03" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="04" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="05" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="06" type="2" mode="" bit="">
+		<name>主轴编码器信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="07" type="1" mode="1" bit="1">
+		<name>上针位信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="08" type="1" mode="1" bit="2">
+		<name>下针位信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="09" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="10" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="11" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="12" type="1" mode="1" bit="3">
+		<name>压框脚踏1</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="13" type="1" mode="1" bit="4">
+		<name>压框脚踏2</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="14" type="1" mode="1" bit="5">
+		<name>启动脚踏</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="15" type="1" mode="1" bit="6">
+		<name>急停信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="16" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="17" type="1" mode="1" bit="7">
+		<name>气压欠压信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="18" type="1" mode="1" bit="8">
+		<name>X轴驱动报警信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="19" type="1" mode="1" bit="9">
+		<name>Y轴驱动报警信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="20" type="1" mode="" bit="15">
+		<name>扩展输入1</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="21" type="1" mode="" bit="16">
+		<name>扩展输入2</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="22" type="1" mode="" bit="17">
+		<name>扩展输入3</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="23" type="1" mode="" bit="18">
+		<name>扩展输入4</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="24" type="1" mode="" bit="19">
+		<name>扩展输入5</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="25" type="1" mode="1" bit="10">
+		<name>断线感应信号1</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="26" type="1" mode="1" bit="11">
+		<name>断线感应信号2</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="27" type="1" mode="1" bit="12">
+		<name>中压脚原点信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="28" type="1" mode="1" bit="13">
+		<name>X轴原点信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="29" type="1" mode="1" bit="14">
+		<name>Y轴原点信号</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="30" type="1" mode="1" bit="20">
+		<name>扩展输入6</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="31" type="1" mode="1" bit="21">
+		<name>扩展输入7</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="32" type="1" mode="1" bit="22">
+		<name>扩展输入8</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="33" type="1" mode="1" bit="23">
+		<name>扩展输入9</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="34" type="1" mode="1" bit="24">
+		<name>扩展输入10</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="35" type="1" mode="1" bit="25">
+		<name>扩展输入15</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="36" type="1" mode="1" bit="26">
+		<name>扩展输入16</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="37" type="1" mode="1" bit="27">
+		<name>扩展输入17</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="38" type="1" mode="1" bit="28">
+		<name>扩展输入18</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="39" type="1" mode="1" bit="29">
+		<name>扩展输入19</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="40" type="1" mode="1" bit="30">
+		<name>扩展输入20</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="41" type="1" mode="1" bit="31">
+		<name>扩展输入21</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="42" type="1" mode="1" bit="32">
+		<name>扩展输入22</name>
+		<tips></tips>
+	</CheckItem>
+</InputCheck>

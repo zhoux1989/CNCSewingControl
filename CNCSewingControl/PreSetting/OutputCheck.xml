@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OutputCheck>
+<!--以下定义输出参数-->
+<!--id表示编号、type表示值类型（1为开关型，2为数值型）、mode表示查询模式（11为通用输出口、12为输出电磁铁端口、10表示电机输出测试）、bit为端口号（从1开始）-->
+	<CheckItem id="01" type="2" mode="10" bit="1">
+		<name>X轴输出</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="02" type="2" mode="10" bit="2">
+		<name>Y轴输出</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="03" type="2" mode="10" bit="3">
+		<name>中压脚电机输出</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="04" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="05" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="06" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="07" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="08" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="09" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="10" type="1" mode="" bit="">
+		<name>待定</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="11" type="1" mode="11" bit="1">
+		<name>扩展输出1</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="12" type="1" mode="11" bit="2">
+		<name>扩展输出2</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="13" type="1" mode="11" bit="3">
+		<name>扩展输出3</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="14" type="1" mode="11" bit="4">
+		<name>扩展输出4</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="15" type="1" mode="11" bit="5">
+		<name>扩展输出5</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="16" type="1" mode="11" bit="6">
+		<name>扩展输出6</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="17" type="1" mode="11" bit="7">
+		<name>扩展输出7</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="18" type="1" mode="11" bit="8">
+		<name>扩展输出8</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="19" type="1" mode="11" bit="9">
+		<name>扩展输出9</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="20" type="1" mode="11" bit="10">
+		<name>扩展输出10</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="21" type="1" mode="11" bit="11">
+		<name>扩展输出11</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="22" type="1" mode="11" bit="12">
+		<name>扩展输出12</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="23" type="1" mode="11" bit="13">
+		<name>扩展输出13</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="24" type="1" mode="11" bit="14">
+		<name>扩展输出14</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="25" type="1" mode="11" bit="15">
+		<name>扩展输出15</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="26" type="1" mode="11" bit="16">
+		<name>扩展输出16</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="27" type="1" mode="11" bit="17">
+		<name>扩展输出17</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="28" type="1" mode="11" bit="18">
+		<name>扩展输出18</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="29" type="1" mode="11" bit="19">
+		<name>扩展输出19</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="30" type="1" mode="11" bit="20">
+		<name>扩展输出20</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="31" type="1" mode="11" bit="21">
+		<name>扩展输出21</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="32" type="1" mode="11" bit="22">
+		<name>扩展输出22</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="33" type="1" mode="11" bit="23">
+		<name>扩展输出23</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="34" type="1" mode="11" bit="24">
+		<name>扩展输出24</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="35" type="1" mode="11" bit="25">
+		<name>扩展输出25</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="36" type="1" mode="11" bit="26">
+		<name>扩展输出26</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="37" type="1" mode="11" bit="27">
+		<name>扩展输出27</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="38" type="1" mode="11" bit="28">
+		<name>扩展输出28</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="39" type="1" mode="11" bit="29">
+		<name>扩展输出29</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="40" type="1" mode="11" bit="30">
+		<name>扩展输出30</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="41" type="1" mode="11" bit="31">
+		<name>扩展输出31</name>
+		<tips></tips>
+	</CheckItem>
+	<CheckItem id="42" type="1" mode="11" bit="32">
+		<name>扩展输出32</name>
+		<tips></tips>
+	</CheckItem>
+</OutputCheck>
