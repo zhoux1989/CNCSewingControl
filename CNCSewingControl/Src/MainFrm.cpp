@@ -316,6 +316,7 @@ CMainFrame::CMainFrame()
 	m_nCurrentMode = MT_NULL;
 	m_bTimerStartFlag = FALSE;
 	m_statePreview = PS_CLOSE;
+	m_bDebugMode = GetConfigOptionINT(L"INIT", L"DEBUGMODE");
 
 	InitQueueData();
 }
@@ -848,7 +849,10 @@ void CMainFrame::OnUpdateConnectOrBreak(CCmdUI* pCmdUI)
 		}
 		else
 		{
-			//pCmdUI->Enable(FALSE);
+			if (!m_bDebugMode)
+			{
+				pCmdUI->Enable(FALSE);
+			}
 		}
 	}
 }

@@ -35,11 +35,16 @@ public:
 
 protected:
 	CFont m_fntPropList;		// 字体
+	CFont m_fntToolBar;		// 字体
+
 	CLocalFileToolBar m_wndToolBar;	// 工具栏
 	CImageList m_imagesList;	// 图标
 	CListCtrl m_listFile;		// 显示列表
 	CEdit m_editSearch;			// 搜索控件
 	SewFileDataArray m_arrFiles;// 文件数据集合
+	CComboBox m_cmbType;		// 文件类型
+
+	CString m_strFileExt;
 
 	void AdjustLayout();// 设置布局
 	void SetViewCtrlFont();	// 设置字体
@@ -63,6 +68,8 @@ protected:
 	afx_msg void OnSetFocus(CWnd* pOldWnd);
 	afx_msg BOOL OnToolTipsNotify(UINT id,NMHDR * pNMHDR,LRESULT* pResult);
 	afx_msg void OnItemchangedList(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnCbnSelchangeType();
+	afx_msg void OnNMDblclkList (NMHDR* pNMHDR, LRESULT* pResult);
 	DECLARE_MESSAGE_MAP()
 };
 

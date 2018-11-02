@@ -120,6 +120,7 @@
 #define IDR_LOCALFILEMANAGE             340
 #define IDB_BMP_WAITTING                341
 #define IDD_DLG_WAITING                 342
+#define IDC_CMB_TYPE                    343
 #define ID_VIEW_SEWINGINFO              1001
 #define ID_VIEW_SEWFILE                 1002
 #define ID_VIEW_IOCHECK                 1003
@@ -131,6 +132,7 @@
 #define IDC_EDIT_NEWNAME                1009
 #define IDC_TREE_FILE                   1010
 #define IDC_WAITING_INFO                1011
+#define IDC_COMBO1                      1012
 #define ID_SEW_CONNECT                  2001
 #define ID_SEWFILE_SET                  2002
 #define ID_PARAM_CONFIG                 2003
@@ -171,14 +173,15 @@
 #define ID_TIMER_WAITANSWER             2038
 #define ID_CMD_PREVIEW_SEW              2039
 #define ID_CMD_SAVE_VALUE               2040
+#define ID_PLACE_HOLDER2                2041
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        343
+#define _APS_NEXT_RESOURCE_VALUE        344
 #define _APS_NEXT_COMMAND_VALUE         2041
-#define _APS_NEXT_CONTROL_VALUE         1012
+#define _APS_NEXT_CONTROL_VALUE         1013
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif

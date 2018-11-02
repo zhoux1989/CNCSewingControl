@@ -70,6 +70,8 @@ protected:
 	SewFileData m_buffFileTrans;	// 文件信息传输缓存
 	SewFileData m_currentFile;		// 记录当前花样数据
 
+	BOOL m_bDebugMode;		// 进入调试模式
+
 // 操作
 public:
 	void InitQueueData();// 初始化队列数据

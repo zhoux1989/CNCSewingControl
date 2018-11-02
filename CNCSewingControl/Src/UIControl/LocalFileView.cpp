@@ -127,6 +127,7 @@
 CLocalFileView::CLocalFileView()
 {
 	InitData();
+	m_strFileExt = L"sew";
 }
 
 CLocalFileView::~CLocalFileView()
@@ -142,7 +143,9 @@ BEGIN_MESSAGE_MAP(CLocalFileView, CDockablePane)
 	ON_WM_PAINT()
 	ON_NOTIFY_EX(TTN_NEEDTEXT, 0, OnToolTipsNotify)
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_FILE, OnItemchangedList)
+	ON_NOTIFY(NM_DBLCLK, IDC_LIST_FILE, OnNMDblclkList)
 	ON_WM_SETFOCUS()
+	ON_CBN_SELCHANGE(IDC_CMB_TYPE, OnCbnSelchangeType)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -186,6 +189,19 @@ int CLocalFileView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_editSearch.Create(WS_VISIBLE|WS_TABSTOP|CBS_AUTOHSCROLL,
 		rectBar, &m_wndToolBar, IDC_EDIT_SEARCH);
 	m_editSearch.SetFont(CFont::FromHandle((HFONT) GetStockObject(DEFAULT_GUI_FONT)));
+
+	// 初始化文件类型选择控件
+	m_wndToolBar.SetButtonInfo(4, ID_PLACE_HOLDER2, TBBS_SEPARATOR, 120);
+	CRect rectBar2;
+	m_wndToolBar.GetItemRect(4, &rectBar2);
+	//rectBar2.bottom += 50;
+	m_cmbType.Create(WS_VISIBLE|CBS_DROPDOWNLIST|WS_VSCROLL| WS_TABSTOP, 
+		rectBar2, &m_wndToolBar, IDC_CMB_TYPE);
+	m_cmbType.SetFont(CFont::FromHandle((HFONT) GetStockObject(DEFAULT_GUI_FONT)));
+	m_cmbType.SetItemHeight(-1, rectBar2.Height()-5);
+	m_cmbType.InsertString(0, L"SEW");
+	m_cmbType.InsertString(1, L"DXF");
+	m_cmbType.SetCurSel(0);
 
 	// 设置视图控件的字体
 	SetViewCtrlFont();
@@ -369,13 +385,31 @@ void CLocalFileView::OnItemchangedList(NMHDR* pNMHDR, LRESULT* pResult)
 	*pResult = 0;
 }
 
+// 双击直接用编辑工具打开
+void CLocalFileView::OnNMDblclkList (NMHDR* pNMHDR, LRESULT* pResult)
+{
+	NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+	int nItem = pNMListView->iItem;
+	if (nItem >= 0 && nItem < m_listFile.GetItemCount())
+	{
+		CString strProgramPath;
+		strProgramPath = GetConfigOption(L"INIT", L"EDITPROGRAM");
+		int nError = (int)ShellExecute(0, L"open", strProgramPath, m_arrFiles[nItem].strPath, NULL, SW_SHOW);
+		if (nError < 32)
+		{
+			AfxMessageBox(L"花样编辑程序启动失败！");
+		}
+	}
+}
+
 //===================================================================================================
 
 // 设置字体
 void CLocalFileView::SetViewCtrlFont()
 {
 	::DeleteObject(m_fntPropList.Detach());
-
+	::DeleteObject(m_fntToolBar.Detach());
+	
 	LOGFONT lf;
 	afxGlobalData.fontRegular.GetLogFont(&lf);
 
@@ -389,9 +423,13 @@ void CLocalFileView::SetViewCtrlFont()
 	lf.lfItalic = info.lfMenuFont.lfItalic;
 
 	m_fntPropList.CreateFontIndirect(&lf);
-	m_listFile.SetFont(&m_fntPropList);
 
-	m_editSearch.SetFont(&m_fntPropList);
+	lf.lfHeight = 64;
+	m_fntToolBar.CreateFontIndirect(&lf);
+
+	m_listFile.SetFont(&m_fntPropList);
+	m_editSearch.SetFont(&m_fntToolBar);
+	m_cmbType.SetFont(&m_fntToolBar);
 }
 
 // 调整布局
@@ -432,7 +470,7 @@ void CLocalFileView::UpdateFileList()
 	m_listFile.DeleteAllItems();
 
 	// 遍历文件夹下的全部sew文件
-	CString strFind = strFolder + L"\\*.sew";
+	CString strFind = strFolder + L"\\*." + m_strFileExt;
 	CFileFind find;
 	BOOL bFind = find.FindFile(strFind);
 	
@@ -464,13 +502,30 @@ BOOL CLocalFileView::DownLoadSewFile(SewFileData& sewData)
 
 	if (SaveSewFile(strPath, sewData.arrByte))
 	{
-		sewData.strPath = strPath;
-		m_arrFiles.push_back(sewData);
-		int nCount = (int)m_listFile.GetItemCount();
-		int nItem = m_listFile.InsertItem(nCount, strFileName);
-		m_listFile.SetItemData(nItem, m_arrFiles.size()-1);
+		if (m_strFileExt.CompareNoCase(L"sew") == 0)
+		{
+			sewData.strPath = strPath;
+			m_arrFiles.push_back(sewData);
+			int nCount = (int)m_listFile.GetItemCount();
+			int nItem = m_listFile.InsertItem(nCount, strFileName);
+			m_listFile.SetItemData(nItem, m_arrFiles.size()-1);
+		}
 		return TRUE;
 	}
 
 	return FALSE;
+}
+
+void CLocalFileView::OnCbnSelchangeType()
+{
+	if (0 == m_cmbType.GetCurSel())
+	{
+		m_strFileExt = L"sew";
+	}
+	else
+	{
+		m_strFileExt = L"dxf";
+	}
+	UpdateFileList();
+	m_listFile.SetFocus();
 }
